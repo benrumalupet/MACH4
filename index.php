@@ -9,12 +9,14 @@ $ctr = 3;
 
 <!DOCTYPE html>
 <html>
+<meta charset="UTF-8">
+<title>MyyyAppp</title>
 
 <head>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #BFE3DA;
+            background-color: #cfe8e7;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -41,20 +43,29 @@ $ctr = 3;
 
         input[type=text],
         input[type=password] {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
             border-radius: 20px;
-            border-color: black;
+            border-width: 2px;
+            width: 95%;
+            height: 50px;
+            padding-left: 20px;
+        
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus {
+            border-color: #296fc7;
+            outline: none;
+            border-width: 2px;
+            box-shadow: 0 0 5px #104d9b;
+            border-radius: 20px;
+            width: 95%;
+            height: 50px;
         }
 
         .form-input {
             display: flex;
             flex-direction: column;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         label {
@@ -63,33 +74,14 @@ $ctr = 3;
             margin-bottom: 10px;
         }
 
-        input {
-            padding: 10px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        }
-
-        input:focus {
-            outline: none;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-        }
-
         button {
-            background-color: #04AA6D;
+            background-color: #0b847b;
             color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
+            padding: 1rem;
+            font-size: 1rem;
             border: none;
-            cursor: pointer;
-            width: 25%;
+            width: 200px;
             border-radius: 20px;
-            border: solid;
-        }
-
-        button:hover {
-            background-color: #3e8e41;
         }
 
         .form-footer {
@@ -115,19 +107,26 @@ $ctr = 3;
     <div class="wrapper">
         <form method="post" action="login.php">
             <div class="imgcontainer">
-                <img src="robot.png" width="100" height="100">
+                <img src="robot.png" width="150" height="150">
             </div>
             <div class="form-input">
                 <label for="email"></label>
-                <input type="text" id="username" name="username" placeholder="Email">
+                <input type="text" id="username" name="username" placeholder="Email Address" required>
             </div>
             <div class="form-input">
                 <label for="password"></label>
-                <input type="password" id="password" name="password" placeholder="Password">
+                <input type="password" id="password" name="password" placeholder="Password" required>
             </div>
             <button type="submit" name="submit">Login</button>
-            <button type="clear" name="clear">Clear</button>
+            <button type="clear" name="clear" >Clear</button>
         </form>
+        <script>
+            function clearInputs() {
+                document.getElementById("email").value = "";
+                document.getElementById("password").value = "";
+                document.getElementById("name").value = "";
+            }
+        </script>
 </body>
 
 </html>
